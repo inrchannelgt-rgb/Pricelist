@@ -182,10 +182,11 @@ footer{ background:#4a1f33; color:#ffd9e8; margin-top:20px; }
 .footer-grid a:hover{ color:#fff; }
 .copyright{ text-align:center; border-top:1px solid rgba(255,255,255,.2); padding:14px; font-size:.85rem; }
 
-.wa-float{
+.discord-float{
   position:fixed; right:20px; bottom:20px; width:56px; height:56px;
   display:flex; align-items:center; justify-content:center; font-size:1.7rem;
-  background:#25d366; border-radius:50%; box-shadow:0 8px 24px rgba(0,0,0,.25);
+  background:#5865F2; color:#fff; text-decoration:none;
+  border-radius:50%; box-shadow:0 8px 24px rgba(0,0,0,.25);
 }
 
 /* RESPONSIVE */
