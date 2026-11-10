@@ -90,10 +90,14 @@ a{ text-decoration:none; color:inherit; }
 .trust-grid b{ display:block; }
 .trust-grid span{ color:var(--muted); font-size:.85rem; }
 
-/* PAGE TITLE - pengganti hero, tetap pink gradient solid */
+/* PAGE TITLE - background gambar Denia + overlay pink solid (tanpa glass) */
 .page-title{
-  background:linear-gradient(135deg, #ff4d94 0%, #ff6fae 45%, #ffa4cc 100%);
-  color:#fff; text-align:center; padding:42px 0;
+  background:
+    linear-gradient(rgba(214,51,132,.78), rgba(255,77,148,.72)),
+    url('denia.jpg') center 25% / cover no-repeat,
+    linear-gradient(135deg, #ff4d94 0%, #ff6fae 45%, #ffa4cc 100%);
+  color:#fff; text-align:center; padding:64px 0;
+  text-shadow:0 2px 12px rgba(74,31,51,.45);
 }
 .page-title h1{ font-size:clamp(1.5rem, 3vw, 2.2rem); margin-bottom:6px; }
 .page-title p{ opacity:.95; }
