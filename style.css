@@ -102,6 +102,36 @@ a{ text-decoration:none; color:inherit; }
 .page-title h1{ font-size:clamp(1.5rem, 3vw, 2.2rem); margin-bottom:6px; }
 .page-title p{ opacity:.95; }
 
+/* CAROUSEL - solid, tanpa glass */
+.carousel{ position:relative; margin-top:22px; }
+.slides{ position:relative; overflow:hidden; border-radius:20px; border:2px solid #ffd0e2; }
+.slide{ display:none; padding:42px 28px; text-align:center; color:#fff; }
+.slide.active{ display:block; }
+.slide h2{ font-size:clamp(1.3rem, 2.6vw, 1.8rem); margin-bottom:8px; }
+.slide p{ margin-bottom:16px; opacity:.95; }
+.slide-denia{
+  background:
+    linear-gradient(rgba(214,51,132,.82), rgba(255,77,148,.75)),
+    url('denia.jpg') center 20% / cover no-repeat,
+    #ff4d94;
+}
+.slide-pink{ background:linear-gradient(135deg, #ff4d94, #ff7ab3); }
+.slide-dark{ background:#4a1f33; }
+.car-btn{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:40px; height:40px; border-radius:50%; border:2px solid #fff;
+  background:#fff; color:var(--pink-dark); font-size:1.4rem; font-weight:800;
+  cursor:pointer; line-height:1;
+}
+.car-btn.prev{ left:12px; }
+.car-btn.next{ right:12px; }
+.dots{ display:flex; gap:8px; justify-content:center; margin-top:10px; }
+.dots button{
+  width:10px; height:10px; border-radius:50%; border:none; cursor:pointer;
+  background:#ffc7de;
+}
+.dots button.on{ background:var(--pink-dark); }
+
 /* SECTIONS */
 .section{ padding:54px 0 10px; }
 .section-head{ text-align:center; max-width:640px; margin:0 auto 28px; }
@@ -218,4 +248,7 @@ footer{ background:#4a1f33; color:#ffd9e8; margin-top:20px; }
   .hero-stats{ gap:18px; }
   .footer-grid{ grid-template-columns:1fr; }
   .cta{ border-radius:0; margin-left:-4%; margin-right:-4%; }
+  .carousel{ margin-top:14px; }
+  .slide{ padding:30px 18px; }
+  .car-btn{ width:34px; height:34px; }
 }

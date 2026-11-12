@@ -29,6 +29,29 @@
   </div>
 </section>
 
+<section class="carousel container">
+  <div class="slides" id="slides">
+    <div class="slide active slide-denia">
+      <h2>Joki Genshin Impact</h2>
+      <p>Explore Nod-Krai 150k • Archon 30-50k • Event 10k-45k</p>
+      <a href="#genshin" class="btn btn-dark">Lihat Genshin</a>
+    </div>
+    <div class="slide slide-pink">
+      <h2>Joki Wuthering Waves</h2>
+      <p>Main Quest 25k • Eksplorasi 25-30k • Tower 15k</p>
+      <a href="#wuwa" class="btn btn-dark">Lihat Wuwa</a>
+    </div>
+    <div class="slide slide-dark">
+      <h2>Order via Discord</h2>
+      <p>Klik Order Sekarang, kirim UID + kebutuhan joki kamu</p>
+      <a href="https://discord.com/invite/t3HpjwqhdY" target="_blank" class="btn btn-pink">Join Discord</a>
+    </div>
+  </div>
+  <button class="car-btn prev" id="carPrev" aria-label="Sebelumnya">‹</button>
+  <button class="car-btn next" id="carNext" aria-label="Berikutnya">›</button>
+  <div class="dots" id="carDots"></div>
+</section>
+
 <main class="container">
 
   <!-- GENSHIN -->
@@ -149,6 +172,26 @@ hamburger.addEventListener('click', () => {
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('active'));
 });
+
+const slides = document.querySelectorAll('#slides .slide');
+const dotsWrap = document.getElementById('carDots');
+let cur = 0, timer;
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.setAttribute('aria-label', 'Slide ' + (i + 1));
+  d.addEventListener('click', () => { show(i); restart(); });
+  dotsWrap.appendChild(d);
+});
+const dots = dotsWrap.querySelectorAll('button');
+function show(i) {
+  cur = (i + slides.length) % slides.length;
+  slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+  dots.forEach((d, k) => d.classList.toggle('on', k === cur));
+}
+document.getElementById('carPrev').addEventListener('click', () => { show(cur - 1); restart(); });
+document.getElementById('carNext').addEventListener('click', () => { show(cur + 1); restart(); });
+function restart() { clearInterval(timer); timer = setInterval(() => show(cur + 1), 5000); }
+show(0); restart();
 </script>
 </body>
 </html>
