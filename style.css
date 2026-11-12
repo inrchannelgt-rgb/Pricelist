@@ -112,11 +112,22 @@ a{ text-decoration:none; color:inherit; }
 .slide-denia{
   background:
     linear-gradient(rgba(214,51,132,.82), rgba(255,77,148,.75)),
+    url('carousel-1.jpg') center 20% / cover no-repeat,
     url('denia.jpg') center 20% / cover no-repeat,
     #ff4d94;
 }
-.slide-pink{ background:linear-gradient(135deg, #ff4d94, #ff7ab3); }
-.slide-dark{ background:#4a1f33; }
+.slide-pink{
+  background:
+    linear-gradient(rgba(214,51,132,.82), rgba(255,123,179,.78)),
+    url('carousel-2.jpg') center 20% / cover no-repeat,
+    linear-gradient(135deg, #ff4d94, #ff7ab3);
+}
+.slide-dark{
+  background:
+    linear-gradient(rgba(74,31,51,.82), rgba(74,31,51,.72)),
+    url('carousel-3.jpg') center 20% / cover no-repeat,
+    #4a1f33;
+}
 .car-btn{
   position:absolute; top:50%; transform:translateY(-50%);
   width:40px; height:40px; border-radius:50%; border:2px solid #fff;
